@@ -4,20 +4,20 @@ export const data = {
         title: "AWS CLOUD PRACTITIONER",
         subTitle: "AWS, CP",
         description:
-          " Aws cloud practitioner basics working with aws cloud",
+          " Aws cloud practitioner basics working with AWS cloud",
       },
       {
         title: "MERN FULL STACK",
         subTitle: "MERN",
         description:
-          "Learned MongoDB ReactJS ExpressJS and NodeJS and DID some project ",
+          "Learned MongoDB ReactJS ExpressJS and NodeJS and Done Auction Website ",
       },
       
     ],
     education: [
       {
         title: "Secondary",
-        subTitle: "GOOD NEWS ENGLIISH MEDIUM HIGH SCHOOL",
+        subTitle: "GOOD NEWS ENGLISH MEDIUM HIGH SCHOOL",
         description:
           "10th Grade",
       },
@@ -34,9 +34,9 @@ export const data = {
       },
       {
         title: "B.Tech",
-        subTitle: "Vellore institute of technology - AP",
+        subTitle: "Vellore Institute of Technology - AP",
         description:
-          "Bachelor of technology in computer science specialized in Artificial Inteligence and Machine Learning",
+          "Bachelor of technology in computer science specializing in Artificial intelligence and Machine Learning",
       },
     ],
   };
