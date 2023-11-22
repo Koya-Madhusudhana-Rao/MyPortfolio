@@ -16,7 +16,7 @@ const Home = () => {
         <h1>
           Hello, I'm Madhusudhanarao Koya
           <br />
-          Front end developer
+          An aspiring Learner
         </h1>
       </div>
       <Animate
