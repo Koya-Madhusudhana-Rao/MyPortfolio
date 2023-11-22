@@ -12,6 +12,12 @@ export const data = {
         description:
           "Learned MongoDB ReactJS ExpressJS and NodeJS and Done Auction Website ",
       },
+     {
+        title: "Data Analytics ",
+        subTitle: "Certification",
+        description:
+         "Learned PowerBI and Advanced Excel Concepts and Did COVID-19 Data Analysis Tracker",
+     },
       
     ],
     education: [
