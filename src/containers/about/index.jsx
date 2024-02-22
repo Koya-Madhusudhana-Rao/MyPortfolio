@@ -30,7 +30,7 @@ const personalDetails = [
 ];
 
 const jobSummary =
-  "An Aspiring Computer Science Engineer seeking an internship opportunity to gain valuable industryexperience and contribute my enthusiasm and knowledge to a dynamic organization. I am eager tolearn, grow, and apply my knowledge to solve real-world challenges.";
+  "An Aspiring Computer Science Engineer seeking an internship opportunity to gain valuable industry experience and contribute my enthusiasm and knowledge to a dynamic organization. I am eager tolearn, grow, and apply my knowledge to solve real-world challenges.";
 
 const About = () => {
   return (
@@ -52,7 +52,7 @@ const About = () => {
               transform: "translatex(0px)",
             }}
           >
-            <h3>Front End Developer</h3>
+            <h3>Aspiring Leanrer</h3>
             <p>{jobSummary}</p>
           </Animate>
 
