@@ -1,0 +1,118 @@
+.resume {
+    height: 100%;
+}
+
+.timeline {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+}
+
+.timeline__experience, .timeline__education {
+    width: 50%;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline__experience__header-text, .timeline__education__header-text {
+    display: inline-block;
+    color: var(--yellow-theme-sub-text-color);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1rem;
+    letter-spacing: 0.5px;
+    position: relative;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-bottom: 2px solid var(--yellow-theme-main-color);
+}
+
+.timeline__experience__header-text::before, .timeline__experience__header-text::after,
+.timeline__education__header-text::before, .timeline__education__header-text::after {
+    position: absolute;
+    content: '';
+    width: 2px;
+    height: 5px;
+    background-color: var(--yellow-theme-main-color);
+    bottom: -1px;
+}
+
+.timeline__experience__header-text::before, .timeline__education__header-text::before {
+    left: 0;
+}
+
+.timeline__experience__header-text::after, .timeline__education__header-text::after {
+    right: 0;
+}
+
+.timeline__experience__vertical-timeline-element, .timeline__education__vertical-timeline-element {
+    padding: 0px 0px 30px 0px;
+}
+
+.timeline__experience__vertical-timeline-element:last-child, .timeline__education__vertical-timeline-element:last-child {
+    padding-bottom: 0px;
+}
+
+.vertical-timeline-element-title-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.vertical-timeline-element-title-wrapper h3, .vertical-timeline-element-title-wrapper h4 {
+    font-size: 16px;
+}
+
+.vertical-timeline-element-title-wrapper h4 {
+    margin-left: 8px;
+}
+
+.vertical-timeline-element-title-wrapper-description {
+    font-size: 18px;
+}
+
+.vertical-timeline-element-content {
+    box-shadow: none;
+}
+
+.vertical-timeline-element-content-arrow {
+    display: none;
+}
+
+.vertical-timeline-element-date {
+    opacity: 1;
+    color: var(--yellow-theme-sub-text-color);
+    font-size: 18px;
+}
+
+@media only screen and (max-width: 768px) {
+    .timeline {
+        flex-direction: column;
+    }
+    .timeline__experience, .timeline__education {
+        width: 100%;
+        gap: 2rem;
+    }
+}
+
+.download-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: var(--yellow-theme-main-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pdf-viewer {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}

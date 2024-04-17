@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Animate } from "react-simple-animate";
-import "./styles.scss";
+import "./styles.css";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ const Home = () => {
           transform: "translateY(550px)",
         }}
         end={{
-          transform: "translatex(0px)",
+          transform: "translateX(0px)",
         }}
       >
         <div className="home__contact-me">
@@ -39,4 +39,5 @@ const Home = () => {
     </section>
   );
 };
+
 export default Home;
