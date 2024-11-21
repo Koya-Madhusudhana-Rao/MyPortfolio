@@ -25,9 +25,9 @@ function App() {
     <div className="App">
       {/* particles js */}
 
-      {renderParticleJsInHomePage && (
-        <Particles id="particles" options={particles} init={handleInit} />
-      )}
+      // {renderParticleJsInHomePage && (
+      //   <Particles id="particles" options={particles} init={handleInit} />
+      // )}
 
       {/* navbar */}
       <Navbar />
