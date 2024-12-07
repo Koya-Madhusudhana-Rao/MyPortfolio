@@ -3,13 +3,14 @@
   height: 100%;
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center; /* Use align-items instead of align-content for centering */
   flex-direction: column;
 }
 
 .home__text-wrapper {
   display: flex;
   justify-content: center;
+  align-items: center; /* Center the h1 vertically */
 }
 
 .home__text-wrapper h1 {
@@ -27,7 +28,9 @@
 .home__contact-me {
   display: flex;
   justify-content: center;
+  align-items: center; /* Ensure button is centered */
   margin-top: 15px;
+  width: 100%;  /* Allow for full-width in mobile */
 }
 
 .home__contact-me button {
@@ -39,6 +42,9 @@
   border: 1.5px solid var(--yellow-theme-main-color);
   border-radius: 4px;
   font-weight: 500;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  max-width: 100%;  /* Prevent button from overflowing */
+  text-align: center;
 }
 
 .home__contact-me button:hover {
@@ -51,12 +57,24 @@
     font-size: 3rem;
     line-height: 5rem;
   }
+
+  .home__contact-me button {
+    padding: 8px 30px;  /* Adjust padding for small screens */
+    font-size: 1.5rem;  /* Adjust font size for small screens */
+    max-width: 90%;  /* Ensure button doesn't overflow */
+  }
 }
 
 @media only screen and (min-width: 551px) and (max-width: 768px) {
   .home__text-wrapper h1 {
     font-size: 4rem;
     line-height: 6rem;
+  }
+
+  .home__contact-me button {
+    padding: 10px 50px;  /* Adjust padding for medium screens */
+    font-size: 1.8rem;  /* Adjust font size */
+    max-width: 90%;  /* Ensure button is responsive */
   }
 }
 
@@ -71,7 +89,6 @@
   from {
     width: 0;
   }
-  
   to {
     width: 100%;
   }

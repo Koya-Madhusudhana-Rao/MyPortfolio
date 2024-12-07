@@ -6,10 +6,8 @@ import "react-vertical-timeline-component/style.min.css";
 import { data } from "./utils";
 import "./styles.css";
 import { MdWork } from "react-icons/md";
-import { Row } from "react-bootstrap";
 
 const Resume = () => {
-  // Function to handle downloading the resume
   const downloadPdf = () => {
     window.open(process.env.REACT_APP_Resume_download_link);
   };

@@ -1,11 +1,11 @@
 export const data = {
   experience: [
-    {
-      title: "AWS CLOUD PRACTITIONER",
-      subTitle: "AWS, CP",
-      description: "Aws cloud practitioner basics working with AWS cloud",
-      certificateLink: process.env.AWS_CERTIFICATE_LINK
-    },
+    // {
+    //   title: "AWS CLOUD PRACTITIONER",
+    //   subTitle: "AWS, CP",
+    //   description: "Aws cloud practitioner basics working with AWS cloud",
+    //   certificateLink: process.env.AWS_CERTIFICATE_LINK
+    // },
     {
       title: "MERN FULL STACK",
       subTitle: "MERN",

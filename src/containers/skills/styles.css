@@ -1,0 +1,77 @@
+/* General Section Styling */
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #1d1c1c;
+  width: 100%;
+}
+
+.skills__content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.skills__category {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 250px;  /* Minimum width for each category */
+}
+
+.skills__category-text {
+  display: inline-block;
+  color: #82ff15;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-bottom: 2px solid #82f312;
+}
+
+.skills__progressbars {
+  width: 100%;
+}
+
+.progressbar-wrapper {
+  padding-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.progressbar-wrapper p {
+  font-size: 1.6rem;
+  margin: 0 0 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #ffecec;
+}
+
+/* For Front-End and Back-End layout */
+.front-end {
+  order: 1; /* This can be changed to reorder items */
+}
+
+.back-end {
+  order: 2; /* This can be changed to reorder items */
+}
+
+/* Media Queries for smaller screens */
+@media only screen and (max-width: 768px) {
+  .skills__content-wrapper {
+    flex-direction: column;
+  }
+
+  .skills__category {
+    min-width: 100%; /* Each category takes full width on small screens */
+  }
+}

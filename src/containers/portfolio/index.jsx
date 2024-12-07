@@ -12,27 +12,26 @@ import { useState } from "react";
 const portfolioData = [
   {
     id: 2,
-    name: "Ecommerce",
+    name: "AuctionSphereX",
     image: ImageOne,
-    link: "",
+    link: "https://msrbidding.onrender.com/Main",  // Provide the link for AuctionSphereX
   },
   {
     id: 3,
-    name: "Notes App",
-    link: "",
+    name: "Sign Language Translator",
     image: ImageTwo,
+    link: "link-to-capstone-project",  // Provide the link for your Capstone Project
   },
   {
     id: 2,
-    name: "Supplier Design",
+    name: "Ecommerce",
     image: ImageThree,
     link: "",
   },
   {
     id: 2,
-    name: "Todo App",
+    name: "Notes App",
     image: ImageFour,
-
     link: "",
   },
   {
@@ -50,11 +49,11 @@ const filterData = [
   },
   {
     filterId: 2,
-    label: "Developement",
+    label: "Mern Stack",
   },
   {
     filterId: 3,
-    label: "Design",
+    label: "Ai ML",
   },
 ];
 
@@ -70,16 +69,10 @@ const Portfolio = () => {
     setHoveredValue(index);
   }
 
-  console.log("====================================");
-  console.log(hoveredValue);
-  console.log("====================================");
-
   const filteredItems =
     filteredvalue === 1
       ? portfolioData
       : portfolioData.filter((item) => item.id === filteredvalue);
-
-  console.log(filteredItems);
 
   return (
     <section id="portfolio" className="portfolio">
@@ -108,8 +101,8 @@ const Portfolio = () => {
               onMouseLeave={() => handleHover(null)}
             >
               <div className="portfolio__content__cards__item__img-wrapper">
-                <a>
-                  <img alt="dummy data" src={item.image} />
+                <a href={item.link} target="_blank" rel="noopener noreferrer">
+                  <img alt={item.name} src={item.image} />
                 </a>
               </div>
               <div className="overlay">

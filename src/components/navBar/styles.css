@@ -1,3 +1,4 @@
+/* Default navbar background color */
 .navbar {
     background-color: var(--yellow-theme-nav-background-color);
     height: 80px;
@@ -6,8 +7,11 @@
     align-items: center;
     font-size: 1.2rem;
     position: sticky;
+    top: 0;
+    width: 100%;
 }
 
+/* Navbar container */
 .navbar__container {
     display: flex;
     align-items: center;
@@ -15,25 +19,33 @@
     height: inherit;
     padding: 0px 20px;
     flex: 1;
+    justify-content: space-between;
 }
 
+/* Logo section */
 .navbar__container__logo {
     color: var(--yellow-theme-main-color);
     cursor: pointer;
 }
 
+/* Navbar menu */
 .navbar__container__menu {
     display: flex;
     list-style: none;
     text-align: center;
+    flex: 1;
+    justify-content: center;
 }
 
+/* Navbar menu item */
 .navbar__container__menu__item {
     line-height: 40px;
     margin-right: 1.5rem;
     font-size: 1.6rem;
+    position: relative;
 }
 
+/* Hover underline effect */
 .navbar__container__menu__item::after {
     content: '';
     display: block;
@@ -48,39 +60,70 @@
     background: var(--yellow-theme-main-color);
 }
 
+/* Navbar links */
 .navbar__container__menu__item__links {
     color: var(--yellow-theme-main-color);
     text-decoration: none;
     padding: 0.5rem;
 }
 
+/* Mobile navigation icon (hamburger) */
 .nav-icon {
     display: none;
 }
 
+/* Navbar responsive behavior (tablet view) */
 @media only screen and (max-width: 768px) {
     .navbar__container__menu {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 100%;
-        position: absolute;
-        top: 80px;
-        left: -110%;
-        opacity: 1;
+        align-items: center;
+        position: fixed; /* Ensure the menu covers the whole screen */
+        top: 0;
+        left: 0;
+        width: 100vw; /* Full viewport width */
+        height: 100vh; /* Full viewport height */
+        opacity: 0;
+        background: #181818; /* Black background for the menu */
         transition: all 0.5s ease;
+        z-index: 1000; /* Ensure it is on top of other content */
+    }.navbar-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        height: 100%;
+        background: #000;
+        transform: translateX(100%); /* Hide offscreen */
+        transition: transform 0.3s ease;
+        z-index: 1000;
     }
+    
+    .navbar-menu.active {
+        transform: translateX(0); /* Show navbar */
+    }
+    
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: white;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    
 
     .navbar__container__menu.active {
-        background: #181818;
-        left: 0px;
         opacity: 1;
     }
 
     .navbar__container__menu__item {
-        border-bottom: 1px solid #282828;
-        margin: 0px;
-        padding: 20px 0px;
+        border-bottom: 1px solid #282828; /* Add separation between items */
+        margin: 20px 0; /* Vertical spacing between menu items */
+        padding: 10px 0;
+        font-size: 1.4rem; /* Maintain readability */
+        text-align: center; /* Center-align text */
     }
 
     .nav-icon {
@@ -88,5 +131,54 @@
         cursor: pointer;
         color: var(--yellow-theme-main-color);
         padding-right: 20px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1001; /* Ensure it appears above the menu */
+    }
+
+    /* Prevent scrolling on the body when the navbar is active */
+    body.navbar-active {
+        overflow: hidden;
+    }
+    body.navbar-active .main-content {
+        padding-top: 80px; /* Adjust this based on navbar height */
+    }
+    .navbar__container__menu.active {
+        background-color: #000000; /* Adjust this to match your design */
+    }
+    
+    
+
+    /* Ensure navbar options work as expected */
+    .navbar__container__menu__item__links {
+        pointer-events: auto;
+        z-index: 1002; /* Ensure it's above background elements */
+    }
+
+    /* Block clicks on the background to prevent interference */
+    .navbar__container__menu.active ~ * {
+        pointer-events: none; /* Disable clicks on background content */
+    }
+
+    .navbar__container__menu__item__links {
+        z-index: 1003; /* Ensure it remains clickable above everything */
+    }
+
+    /* Adjust the page content when the navbar is active */
+    body.navbar-active {
+        padding-right: 0px; /* Ensure no content is hidden behind the navbar */
+    }
+    .navbar-menu {
+        z-index: 1000;  /* Adjust as necessary */
+    }
+    
+    .close-btn {
+        z-index: 1001;  /* Ensure this is above the navbar */
+    }
+    
+
+    .navbar__container__menu.active + .main-content {
+        padding-top: 80px; /* Push the page content below the active navbar */
     }
 }

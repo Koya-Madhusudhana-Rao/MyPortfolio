@@ -1,59 +1,66 @@
-import { Line } from "rc-progress";
 import React from "react";
+import { Line } from "rc-progress";
 import { BsInfoCircleFill } from "react-icons/bs";
-import { Animate, AnimateKeyframes } from "react-simple-animate";
 import PageHeaderContent from "../../components/pageHeaderContent";
-import { skillsData } from "./utils";
-import './styles.scss';
+import "./styles.css";
 
 const Skills = () => {
+  // Front-End skills data
+  const frontEndSkills = [
+    { skillName: "HTML", percentage: 90 },
+    { skillName: "CSS", percentage: 70 },
+    { skillName: "JAVASCRIPT", percentage: 50 },
+    { skillName: "REACTJS", percentage: 50 }
+  ];
+
+  // Back-End skills data
+  const backEndSkills = [
+    { skillName: "JAVA", percentage: 70 },
+    { skillName: "PYTHON", percentage: 65 },
+    { skillName: "ANDROID STUDIO", percentage: 35 }
+  ];
+
   return (
     <section id="skills" className="skills">
-      <PageHeaderContent
-        headerText="My Skills"
-        icon={<BsInfoCircleFill size={40} />}
-      />
+      <PageHeaderContent headerText="My Skills"/>
       <div className="skills__content-wrapper">
-        {skillsData.map((item, i) => (
-          <div key={i} className="skills__content-wrapper__inner-content">
-            <Animate
-              play
-              duration={1}
-              delay={0.3}
-              start={{
-                transform: "translateX(-200px)",
-              }}
-              end={{
-                transform: "translateX(0px)",
-              }}
-            >
-              <h3 className="skills__content-wrapper__inner-content__category-text">
-                {item.label}
-              </h3>
-              <div className="skills__content-wrapper__inner-content__progressbar-container">
-                {item.data.map((skillItem, j) => (
-                  <AnimateKeyframes
-                    play
-                    duration={1}
-                    keyframes={["opacity : 1", "opacity : 0"]}
-                    iterationCount="1"
-                  >
-                    <div className="progressbar-wrapper" key={j}>
-                      <p>{skillItem.skillName}</p>
-                      <Line
-                        percent={skillItem.percentage}
-                        strokeWidth="2"
-                        strokeColor="var(--yellow-theme-main-color)"
-                        trailWidth="2"
-                        strokeLinecap="square"
-                      />
-                    </div>
-                  </AnimateKeyframes>
-                ))}
+        {/* Front-End Section */}
+        <div className="skills__category front-end">
+          <h3 className="skills__category-text">Front-End</h3>
+          <div className="skills__progressbars">
+            {frontEndSkills.map((skillItem, index) => (
+              <div key={index} className="progressbar-wrapper">
+                <p>{skillItem.skillName}</p>
+                <Line
+                  percent={skillItem.percentage}
+                  strokeWidth="2"
+                  strokeColor="#82f312"
+                  trailWidth="2"
+                  strokeLinecap="square"
+                />
               </div>
-            </Animate>
+            ))}
           </div>
-        ))}
+        </div>
+
+        {/* Back-End Section */}
+        <div className="skills__category back-end">
+          <h3 className="skills__category-text">Back-End</h3>
+          <div className="skills__progressbars">
+            {backEndSkills.map((skillItem, index) => (
+              <div key={index} className="progressbar-wrapper">
+                <p>{skillItem.skillName}</p>
+                <Line
+                  percent={skillItem.percentage}
+                  strokeWidth="2"
+                  strokeColor="#82f312"
+                  trailWidth="2"
+                  strokeLinecap="square"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
