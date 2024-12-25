@@ -1,95 +1,64 @@
 .home {
-  position: relative;
-  height: 100%;
+  min-height: 100vh;
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center; /* Use align-items instead of align-content for centering */
-  flex-direction: column;
+  padding: 2rem;
+  background-color: var(--navy-blue);
 }
 
-.home__text-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Center the h1 vertically */
-}
-
-.home__text-wrapper h1 {
-  color: var(--yellow-theme-main-color);
-  margin: 0;
-  font-weight: 500;
-  font-size: 4rem;
-  line-height: 6rem;
-  position: relative;
-  overflow: hidden;
-  white-space: nowrap;
-  animation: typingEffectAnimation 2.5s steps(20, end);
-}
-
-.home__contact-me {
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Ensure button is centered */
-  margin-top: 15px;
-  width: 100%;  /* Allow for full-width in mobile */
-}
-
-.home__contact-me button {
-  cursor: pointer;
-  padding: 10px 70px;
-  font-size: 2rem;
-  background: transparent;
-  color: var(--yellow-theme-main-color);
-  border: 1.5px solid var(--yellow-theme-main-color);
-  border-radius: 4px;
-  font-weight: 500;
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
-  max-width: 100%;  /* Prevent button from overflowing */
+.home__content {
   text-align: center;
+  max-width: 800px;
 }
 
-.home__contact-me button:hover {
-  background: var(--yellow-theme-main-color);
-  color: #000000;
+.home__greeting {
+  color: var(--accent);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-@media only screen and (max-width: 550px) {
-  .home__text-wrapper h1 {
-    font-size: 3rem;
-    line-height: 5rem;
-  }
-
-  .home__contact-me button {
-    padding: 8px 30px;  /* Adjust padding for small screens */
-    font-size: 1.5rem;  /* Adjust font size for small screens */
-    max-width: 90%;  /* Ensure button doesn't overflow */
-  }
+.home__name {
+  color: var(--lightest-slate);
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
-@media only screen and (min-width: 551px) and (max-width: 768px) {
-  .home__text-wrapper h1 {
-    font-size: 4rem;
-    line-height: 6rem;
-  }
-
-  .home__contact-me button {
-    padding: 10px 50px;  /* Adjust padding for medium screens */
-    font-size: 1.8rem;  /* Adjust font size */
-    max-width: 90%;  /* Ensure button is responsive */
-  }
+.home__title {
+  color: var(--slate);
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
-@media only screen and (min-width: 769px) and (max-width: 990px) {
-  .home__text-wrapper h1 {
-    font-size: 6rem;
-    line-height: 8rem;
-  }
+.home__cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
 }
 
-@keyframes typingEffectAnimation {
-  from {
-    width: 0;
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--navy-blue);
+}
+
+.btn-secondary {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .home__name {
+    font-size: 2rem;
   }
-  to {
-    width: 100%;
+
+  .home__title {
+    font-size: 1.5rem;
+  }
+
+  .home__cta {
+    flex-direction: column;
+    align-items: center;
   }
 }

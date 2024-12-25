@@ -1,123 +1,150 @@
-.contact__content {
-    padding: 20px;
-}
-
-.contact__content__header-text {
-    color: var(--yellow-theme-sub-text-color);
-    display: inline-block;
-    font-size: 22px;
+.contact {
+    padding: 6rem 2rem 4rem;
+    min-height: 100vh;
+    background-color: var(--navy-blue);
+  }
+  
+  .contact__title {
+    color: var(--lightest-slate);
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .contact__container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .contact__content {
+    background: rgba(17, 34, 64, 0.5);
+    border-radius: 12px;
+    padding: 2.5rem;
+    border: 1px solid var(--lightest-navy);
+  }
+  
+  .contact__subtitle {
+    color: var(--accent);
+    font-size: 1.75rem;
     font-weight: 600;
-    line-height: 1em;
-    letter-spacing: 0.5px;
-    position: relative;
-    text-transform: uppercase;
-    padding: 5px 10px;
-    
-}
-
-.contact__content__header-text::before,
-.contact__content__header-text::after {
-    position: absolute;
-    content: "";
-    width: 2px;
-    height: 5px;
-    
-    bottom: -1px;
-}
-
-.contact__content__header-text::before {
-    left: 0;
-}
-
-.contact__content__header-text::after {
-    right: 0;
-}
-
-.contact__content__form {
-    margin-top: 30px;
-}
-
-.contact__content__form__controlswrapper {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .contact__description {
+    color: var(--light-slate);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+  
+  .contact__form {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    margin-bottom: 30px;
-}
-
-.contact__content__form__controlswrapper div {
+    gap: 1.5rem;
+  }
+  
+  .contact__form-group {
     position: relative;
-}
-
-.contact__content__form__controlswrapper .inputName,
-.contact__content__form__controlswrapper .inputEmail,
-.contact__content__form__controlswrapper .inputDescription {
+  }
+  
+  .contact__input {
     width: 100%;
-    border: 2px solid var(--yellow-theme-main-color);
-    padding: 16px 12px;
-    transition: all 0.5s ease;
-    position: relative;
-    background-color: transparent;
-    color: var(--yellow-theme-sub-text-color);
-}
-
-.contact__content__form__controlswrapper .nameLabel,
-.contact__content__form__controlswrapper .emailLabel,
-.contact__content__form__controlswrapper .descriptionLabel {
-    font-weight: 500;
-    position: absolute;
-    top: 7px;
-    left: 12px;
-    transition: all 0.2s ease;
-    color: var(--yellow-theme-sub-text-color);
-    font-size: 16px;
-}
-
-.contact__content__form__controlswrapper .inputName:focus,
-.contact__content__form__controlswrapper .inputEmail:focus,
-.contact__content__form__controlswrapper .inputDescription:focus {
-    outline: none;
-}
-
-.contact__content__form__controlswrapper .inputName:focus + .nameLabel,
-.contact__content__form__controlswrapper .inputName:valid + .nameLabel,
-.contact__content__form__controlswrapper .inputEmail:focus + .emailLabel,
-.contact__content__form__controlswrapper .inputEmail:valid + .emailLabel,
-.contact__content__form__controlswrapper .inputDescription:focus + .descriptionLabel,
-.contact__content__form__controlswrapper .inputDescription:valid + .descriptionLabel {
-    font-size: 18px;
-    top: -25px;
-    left: 0px;
-}
-
-.contact__content button {
-    cursor: pointer;
-    padding: 10px 70px;
-    font-size: 2rem;
     background: transparent;
-    color: var(--yellow-theme-main-color);
-    border: 1.5px solid var(--yellow-theme-main-color);
+    border: 2px solid var(--lightest-navy);
     border-radius: 4px;
+    padding: 1rem;
+    color: var(--lightest-slate);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .contact__textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  .contact__input:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  
+  .contact__label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    padding: 0 0.25rem;
+    color: var(--light-slate);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    background-color: var(--navy-blue);
+  }
+  
+  .contact__input:focus ~ .contact__label,
+  .contact__input:not(:placeholder-shown) ~ .contact__label {
+    top: -0.5rem;
+    left: 0.8rem;
+    font-size: 0.875rem;
+    color: var(--accent);
+  }
+  
+  .contact__button {
+    justify-self: center;
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
     font-weight: 500;
-}
-
-.contact__content button:hover {
-    color: #000;
-    background: var(--yellow-theme-main-color);
-}
-
-@media only screen and (max-width: 768px) {
-    .contact__content__form {
-        text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .contact__button:hover {
+    background: var(--accent);
+    color: var(--navy-blue);
+  }
+  
+  .contact__success {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(130, 255, 21, 0.1);
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+  }
+  
+  .contact__success h4 {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact__success p {
+    color: var(--light-slate);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .contact {
+      padding: 4rem 1rem;
     }
-
-    .contact__content__form__controlswrapper {
-        grid-template-columns: repeat(1, 1fr);
+  
+    .contact__title {
+      font-size: 2rem;
     }
-}
-
-.thank-you-message {
-    color: var(--yellow-theme-main-color); /* Change the color to match your website's design */
-    font-size: 18px;
-    font-weight: 500;
-    margin-top: 20px;
-}
+  
+    .contact__content {
+      padding: 1.5rem;
+    }
+  
+    .contact__subtitle {
+      font-size: 1.5rem;
+    }
+  
+    .contact__button {
+      width: 100%;
+    }
+  }

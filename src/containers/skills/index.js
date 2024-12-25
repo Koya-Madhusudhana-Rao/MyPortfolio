@@ -1,63 +1,86 @@
-import React from "react";
-import { Line } from "rc-progress";
-import { BsInfoCircleFill } from "react-icons/bs";
-import PageHeaderContent from "../../components/pageHeaderContent";
-import "./styles.css";
+import React from 'react';
+import './styles.css';
 
 const Skills = () => {
-  // Front-End skills data
+  const progrmaingSkills = [
+    {
+      name: 'Java',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg'
+    },
+    {
+      name: 'Python',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'
+    },
+    {
+      name: 'MySQL',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg'
+    }
+  ]
   const frontEndSkills = [
-    { skillName: "HTML", percentage: 90 },
-    { skillName: "CSS", percentage: 70 },
-    { skillName: "JAVASCRIPT", percentage: 50 },
-    { skillName: "REACTJS", percentage: 50 }
+    {
+      name: 'HTML',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg'
+    },
+    {
+      name: 'CSS',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'
+    },
+    {
+      name: 'JavaScript',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
+    },
+    {
+      name: 'React',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
+    }
   ];
 
-  // Back-End skills data
   const backEndSkills = [
-    { skillName: "JAVA", percentage: 70 },
-    { skillName: "PYTHON", percentage: 65 },
-    { skillName: "ANDROID STUDIO", percentage: 35 }
+    {
+      name: 'MongoDB',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg'
+    },
+    {
+      name: 'Express.js',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg'
+    }
   ];
+
+  const SkillCard = ({ name, icon }) => (
+    <div className="skill-card">
+      <img src={icon} alt={name} className="skill-card__icon" />
+      <h3 className="skill-card__name">{name}</h3>
+    </div>
+  );
 
   return (
-    <section id="skills" className="skills">
-      <PageHeaderContent headerText="My Skills"/>
-      <div className="skills__content-wrapper">
-        {/* Front-End Section */}
-        <div className="skills__category front-end">
-          <h3 className="skills__category-text">Front-End</h3>
-          <div className="skills__progressbars">
-            {frontEndSkills.map((skillItem, index) => (
-              <div key={index} className="progressbar-wrapper">
-                <p>{skillItem.skillName}</p>
-                <Line
-                  percent={skillItem.percentage}
-                  strokeWidth="2"
-                  strokeColor="#82f312"
-                  trailWidth="2"
-                  strokeLinecap="square"
-                />
-              </div>
+    <section className="skills">
+      <h2 className="skills__title">My Skills</h2>
+      
+      <div className="skills__container">
+      <div className="skills__category">
+          <h3 className="skills__category-title">Programing Laguages</h3>
+          <div className="skills__grid">
+            {progrmaingSkills.map((skill, index) => (
+              <SkillCard key={index} {...skill} />
             ))}
           </div>
         </div>
 
-        {/* Back-End Section */}
-        <div className="skills__category back-end">
-          <h3 className="skills__category-text">Back-End</h3>
-          <div className="skills__progressbars">
-            {backEndSkills.map((skillItem, index) => (
-              <div key={index} className="progressbar-wrapper">
-                <p>{skillItem.skillName}</p>
-                <Line
-                  percent={skillItem.percentage}
-                  strokeWidth="2"
-                  strokeColor="#82f312"
-                  trailWidth="2"
-                  strokeLinecap="square"
-                />
-              </div>
+        <div className="skills__category">
+          <h3 className="skills__category-title">Frontend Development</h3>
+          <div className="skills__grid">
+            {frontEndSkills.map((skill, index) => (
+              <SkillCard key={index} {...skill} />
+            ))}
+          </div>
+        </div>
+
+        <div className="skills__category">
+          <h3 className="skills__category-title">Backend Development</h3>
+          <div className="skills__grid">
+            {backEndSkills.map((skill, index) => (
+              <SkillCard key={index} {...skill} />
             ))}
           </div>
         </div>
