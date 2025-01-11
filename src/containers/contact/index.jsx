@@ -1,6 +1,60 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-import './styles.css';
+import './Contact.css'; // Use appropriate path for the styles
+
+const SuccessMessage = () => (
+  <div className="contact__success">
+    <h4>Thank you for your message!</h4>
+    <p>I'll get back to you soon.</p>
+  </div>
+);
+
+const ContactForm = ({ formData, handleChange, handleSubmit }) => (
+  <form className="contact__form" onSubmit={handleSubmit}>
+    <div className="contact__form-group">
+      <input
+        required
+        type="text"
+        name="name"
+        id="name"
+        value={formData.name}
+        onChange={handleChange}
+        className="contact__input"
+      />
+      <label htmlFor="name" className="contact__label">Name</label>
+    </div>
+
+    <div className="contact__form-group">
+      <input
+        required
+        type="email"
+        name="email"
+        id="email"
+        value={formData.email}
+        onChange={handleChange}
+        className="contact__input"
+      />
+      <label htmlFor="email" className="contact__label">Email</label>
+    </div>
+
+    <div className="contact__form-group">
+      <textarea
+        required
+        name="description"
+        id="description"
+        rows="5"
+        value={formData.description}
+        onChange={handleChange}
+        className="contact__input contact__textarea"
+      />
+      <label htmlFor="description" className="contact__label">Message</label>
+    </div>
+
+    <button type="submit" className="contact__button">
+      Send Message
+    </button>
+  </form>
+);
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -44,60 +98,6 @@ const Contact = () => {
       );
   };
 
-  const SuccessMessage = () => (
-    <div className="contact__success">
-      <h4>Thank you for your message!</h4>
-      <p>I'll get back to you soon.</p>
-    </div>
-  );
-
-  const ContactForm = () => (
-    <form className="contact__form" onSubmit={handleSubmit}>
-      <div className="contact__form-group">
-        <input
-          required
-          type="text"
-          name="name"
-          id="name"
-          value={formData.name}
-          onChange={handleChange}
-          className="contact__input"
-        />
-        <label htmlFor="name" className="contact__label">Name</label>
-      </div>
-
-      <div className="contact__form-group">
-        <input
-          required
-          type="email"
-          name="email"
-          id="email"
-          value={formData.email}
-          onChange={handleChange}
-          className="contact__input"
-        />
-        <label htmlFor="email" className="contact__label">Email</label>
-      </div>
-
-      <div className="contact__form-group">
-        <textarea
-          required
-          name="description"
-          id="description"
-          rows="5"
-          value={formData.description}
-          onChange={handleChange}
-          className="contact__input contact__textarea"
-        />
-        <label htmlFor="description" className="contact__label">Message</label>
-      </div>
-
-      <button type="submit" className="contact__button">
-        Send Message
-      </button>
-    </form>
-  );
-
   return (
     <section className="contact">
       <h2 className="contact__title">Contact Me</h2>
@@ -107,7 +107,7 @@ const Contact = () => {
           <p className="contact__description">
             Feel free to reach out to me for any questions or opportunities.
           </p>
-          {isSubmitted ? <SuccessMessage /> : <ContactForm />}
+          {isSubmitted ? <SuccessMessage /> : <ContactForm formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} />}
         </div>
       </div>
     </section>
