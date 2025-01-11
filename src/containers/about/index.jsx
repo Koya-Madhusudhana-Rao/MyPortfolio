@@ -17,7 +17,7 @@ const About = () => {
       >
         <div className="about__photo">
           <motion.img 
-            src="/21BCE9905_KoyaMadhusudhanaRao.jpg" 
+            src="/Madhusudhana rao Image.png" 
             alt="Koya Madhusudhana Rao"
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.3 }}
