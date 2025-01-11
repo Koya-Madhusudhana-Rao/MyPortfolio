@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-import './Contact.css'; // Use appropriate path for the styles
+import './styles.css'; // Use appropriate path for the styles
 
 const SuccessMessage = () => (
   <div className="contact__success">
